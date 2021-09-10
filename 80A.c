@@ -1,0 +1,20 @@
+ #include<stdio.h>
+ main(){
+   int n,i,j,flag=0,out,m;
+   scanf("%d%d",&n,&m);
+   for(i=n+1;i<=m;i++){
+      flag=0;
+      for(j=n;j<i;j++){
+         if(i%j==0){
+            flag=1;
+            break;
+         }
+      }
+      out=i;
+   }
+      if(flag==0){
+         if(out==m)
+            printf("YES\n");}
+         else
+            printf("NO\n");
+ }
