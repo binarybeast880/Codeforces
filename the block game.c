@@ -1,0 +1,20 @@
+#include<stdio.h>
+main(){
+    int t,n,rev,rem,i,temp;
+    scanf("%d",&t);
+    for(i=1;i<=t;i++){
+        scanf("%d",&n);
+        rev=0;
+        temp=n;
+        while(n>0){
+        rem=n%10;
+        rev=rev*10+rem;
+        n=n/10;
+    }
+    if(rev==temp){
+        printf("Wins\n");
+    }
+    else{
+        printf("Loses\n");
+    }
+}}
