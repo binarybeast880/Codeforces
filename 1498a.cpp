@@ -1,31 +1,37 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
+long long gcd_sum(long long num)
+{
+    long long tmp = num, digitsum = 0;
 
-void test(){
-ll n;
-cin>>n;
-ll temp=n;
-ll sum=0;
-while(n>0){
-    sum+=n%10;
-    n/=10;
-}
-ll gcd=temp%sum;
-ll bh=temp/sum;
-ll  ans=bh*sum;
-if(temp-ans>1)
-    cout<<
-ll g=
-if(gcd>1)
-cout<<temp%sum<<endl;
-}
+    while (tmp > 0)
+    {
+        digitsum += tmp % 10;
+        tmp /= 10;
+    }
 
-main(){
-int t;
-cin>>t;
-while(t--){
-    test();
+    long long gcd = __gcd(num, digitsum);
+    return gcd;
 }
-
+main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        long long n;
+        cin >> n;
+        if (gcd_sum(n) != 1)
+        {
+            cout << n << "\n";
+        }
+        else if (gcd_sum(n + 1) != 1)
+        {
+            cout << n + 1 << "\n";
+        }
+        else if (gcd_sum(n + 2) != 1)
+        {
+            cout << n + 2 << "\n";
+        }
+    }
 }
